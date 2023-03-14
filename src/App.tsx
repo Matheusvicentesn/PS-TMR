@@ -1,10 +1,11 @@
+import { Form } from "./components/Form";
 
 function App() {
-   return (
+  return (
     <div className="App">
-     
+      <Form></Form>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
