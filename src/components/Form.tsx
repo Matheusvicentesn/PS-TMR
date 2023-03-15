@@ -1,9 +1,10 @@
 import styled from "@emotion/styled";
-import { Button, InputAdornment, TextField } from "@mui/material";
+import { Button, InputAdornment, Modal, TextField } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import { useFormik } from "formik";
 import { useState } from "react";
 import { calc } from "../utils/calc";
+import { Modald } from "./Modal";
 
 const FormStyled = styled("div")({});
 
@@ -24,12 +25,27 @@ export const Form = () => {
     },
   });
 
+  // Modal
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Container
       maxWidth="sm"
       sx={{ border: 1, borderColor: "#00A335", height: "80vh" }}
     >
       <h1>Calcule</h1>
+      <Modald aberto={open} fechado={handleClose} >
+        <>Teste</>
+      </Modald>
+
       <FormStyled>
         <form onSubmit={formik.handleSubmit}>
           <TextField
@@ -61,6 +77,7 @@ export const Form = () => {
             }}
             onChange={formik.handleChange}
           ></TextField>
+          
           <TextField
             id="carga"
             name="carga"
@@ -113,7 +130,7 @@ export const Form = () => {
             <Button color="primary" variant="contained" type="reset">
               Limpar Campos
             </Button>
-            <Button color="primary" variant="contained">
+            <Button color="primary" variant="contained" onClick={handleOpen}>
               Histórico
             </Button>
           </Box>
