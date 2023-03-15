@@ -1,6 +1,5 @@
-import { Backdrop, Button, Fade, Modal, Typography } from "@mui/material";
+import { Backdrop, Fade, Modal } from "@mui/material";
 import { Box } from "@mui/system";
-import { useState } from "react";
 
 export const Modald = (props: any) => {
   const style = {
