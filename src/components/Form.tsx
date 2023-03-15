@@ -1,11 +1,13 @@
 import styled from "@emotion/styled";
 import { Button, InputAdornment, TextField } from "@mui/material";
-import { Box, Container, textAlign } from "@mui/system";
+import { Box, Container } from "@mui/system";
 import { useFormik } from "formik";
+import { useState } from "react";
 
-const FormStyled = styled("form")({});
+const FormStyled = styled("div")({});
 
 export const Form = () => {
+  const [resul, setResul] = useState(0);
   const formik = useFormik({
     initialValues: {
       placa: "",
@@ -17,8 +19,20 @@ export const Form = () => {
     },
     onSubmit: (values) => {
       console.log(values);
+      let carga = values.carga;
+      let distancia = values.distancia;
+      let consumo = values.consumo;
+
+      let kilo_por_km = parseInt(carga) / (parseInt(distancia) * 0.001);
+      let litros_tonelada_km =
+        (parseInt(consumo) * 1000) / (kilo_por_km * 1000);
+
+      console.log(kilo_por_km);
+      console.log(litros_tonelada_km);
+      setResul(litros_tonelada_km);
     },
   });
+
   return (
     <Container
       maxWidth="sm"
@@ -114,7 +128,7 @@ export const Form = () => {
           </Box>
         </form>
 
-        <h2> O resultado é: </h2>
+        <h2> O resultado é: {resul}</h2>
       </FormStyled>
     </Container>
   );
