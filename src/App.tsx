@@ -1,9 +1,10 @@
-import { Form } from "./components/Form";
+
+import { Home } from "./pages/Home";
 
 function App() {
   return (
     <div className="App">
-      <Form></Form>
+      <Home></Home>
     </div>
   );
 }
