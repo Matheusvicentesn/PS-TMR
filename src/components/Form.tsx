@@ -4,6 +4,7 @@ import { Box, Container } from "@mui/system";
 import { useFormik } from "formik";
 import { useState } from "react";
 import { calc } from "../utils/calc";
+import { saveLocalStorage } from "../utils/localStorage";
 import { validations } from "../utils/validations";
 import { Modald } from "./Modal";
 
@@ -22,7 +23,9 @@ export const Form = () => {
     validationSchema: validations,
 
     onSubmit: (values) => {
-      setResul(calc(values));
+      const total = calc(values)
+      setResul(total);
+      saveLocalStorage(values, total);
     },
   });
 
