@@ -1,12 +1,11 @@
 import styled from "@emotion/styled";
-import { Button, InputAdornment, Modal, TextField } from "@mui/material";
+import { Button, InputAdornment, TextField } from "@mui/material";
 import { Box, Container } from "@mui/system";
 import { useFormik } from "formik";
 import { useState } from "react";
 import { calc } from "../utils/calc";
 import { validations } from "../utils/validations";
 import { Modald } from "./Modal";
-import * as yup from "yup";
 
 const FormStyled = styled("div")({});
 export const Form = () => {
@@ -150,13 +149,18 @@ export const Form = () => {
             <Button color="primary" variant="contained" type="reset">
               Limpar Campos
             </Button>
-            <Button color="primary" variant="contained" onClick={handleOpen}>
+            <Button
+              color="primary"
+              variant="contained"
+              onClick={() => {
+                handleOpen();
+              }}
+            >
               Histórico
             </Button>
           </Box>
         </form>
-
-        <h2> O resultado é: {resul}</h2>
+        {resul === 0 ? "" : <h2> O resultado é: {resul}</h2>}
       </FormStyled>
     </Container>
   );
