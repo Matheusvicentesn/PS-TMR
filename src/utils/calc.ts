@@ -6,8 +6,6 @@ export function calc(values: any) {
   let kilo_por_km = carga / (distancia * 0.001);
   let litros_tonelada_km = (consumo * 1000) / (kilo_por_km * 1000);
 
-  console.log(kilo_por_km);
-  console.log(litros_tonelada_km);
 
   return litros_tonelada_km;
 }

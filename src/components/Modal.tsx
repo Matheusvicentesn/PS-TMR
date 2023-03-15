@@ -4,18 +4,16 @@ import { Box } from "@mui/system";
 export const Modald = (props: any) => {
   const style = {
     position: "absolute" as "absolute",
-    top: "50%",
+    top: "20%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: '80%',
+    width: "80%",
     height: 300,
     bgcolor: "background.paper",
-    border: "2px solid #66cc80",
     boxShadow: 24,
     p: 4,
   };
 
-  console.log(props.aberto);
   if (props.aberto === false) return null;
   else {
     return (
@@ -32,11 +30,17 @@ export const Modald = (props: any) => {
               timeout: 500,
             },
           }}
+          sx={{
+            mb: 2,
+            display: "flex",
+            flexDirection: "column",
+
+            overflowY: "scroll",
+            // justifyContent="flex-end" # DO NOT USE THIS WITH 'scroll'
+          }}
         >
           <Fade in={props.aberto}>
-            <Box sx={style}>
-              {props.children}
-            </Box>
+            <Box sx={style}>{props.children}</Box>
           </Fade>
         </Modal>
       </div>

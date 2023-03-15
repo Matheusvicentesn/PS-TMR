@@ -7,6 +7,7 @@ import { calc } from "../utils/calc";
 import { saveLocalStorage } from "../utils/localStorage";
 import { validations } from "../utils/validations";
 import { Modald } from "./Modal";
+import { HistoryTable } from "./Table";
 
 const FormStyled = styled("div")({});
 export const Form = () => {
@@ -23,11 +24,13 @@ export const Form = () => {
     validationSchema: validations,
 
     onSubmit: (values) => {
-      const total = calc(values)
+      const total = calc(values);
       setResul(total);
       saveLocalStorage(values, total);
     },
   });
+
+  const history = JSON.parse(localStorage.getItem("history") || "[]");
 
   // Modal
   const [open, setOpen] = useState(false);
@@ -47,7 +50,7 @@ export const Form = () => {
     >
       <h1>Calcule</h1>
       <Modald aberto={open} fechado={handleClose}>
-        <>Teste</>
+        <HistoryTable></HistoryTable>
       </Modald>
 
       <FormStyled>
