@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FormCalc } from "../components/Form";
 import { Modald } from "../components/Modal";
 import { HistoryTable } from "../components/Table";
+import InfoIcon from "@mui/icons-material/Info";
 
 export const Home = () => {
   const [open, setOpen] = useState(false);
@@ -14,12 +15,26 @@ export const Home = () => {
     setOpen(false);
   };
 
+  const [openInfo, setOpenInfo] = useState(false);
+  const handleOpenInfo = () => {
+    setOpenInfo(true);
+  };
+  const handleCloseInfo = () => {
+    setOpenInfo(false);
+  };
+
   return (
     <>
       <Container
         maxWidth="sm"
         sx={{ border: 1, borderColor: "#00A335", height: "80vh" }}
       >
+        <Box sx={{ flexDirection: "row-reverse" }} display="flex">
+          <Button onClick={handleOpenInfo}>
+            <InfoIcon color="secondary"></InfoIcon>
+          </Button>
+        </Box>
+
         <Typography variant="h3" gutterBottom align="center">
           Calcule
         </Typography>
@@ -60,7 +75,11 @@ export const Home = () => {
         <Modald aberto={open} fechado={handleClose}>
           <HistoryTable></HistoryTable>
         </Modald>
-
+        <Modald aberto={openInfo} fechado={handleCloseInfo}>
+          <Typography variant="h3" gutterBottom align="center">
+            Seja bem vindo
+          </Typography>
+        </Modald>
       </Container>
     </>
   );
