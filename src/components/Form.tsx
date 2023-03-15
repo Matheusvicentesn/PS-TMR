@@ -18,6 +18,7 @@ export const Form = () => {
       consumo: "",
       distancia: "",
     },
+
     onSubmit: (values) => {
       setResul(calc(values));
     },
@@ -109,7 +110,7 @@ export const Form = () => {
             <Button color="primary" variant="contained" type="submit">
               Calcular
             </Button>
-            <Button color="primary" variant="contained">
+            <Button color="primary" variant="contained" type="reset">
               Limpar Campos
             </Button>
             <Button color="primary" variant="contained">
