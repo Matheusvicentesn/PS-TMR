@@ -40,7 +40,7 @@ export const HistoryTable = () => {
               <b>Hora do registro</b>
             </TableCell>
             <TableCell align="center">
-              <b>Consumo de combustível Total</b>
+              <b>Consumo litro por tonelada por Km</b>
             </TableCell>
           </TableRow>
         </TableHead>
