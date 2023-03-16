@@ -8,6 +8,7 @@ import InfoIcon from "@mui/icons-material/Info";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
+import { Margin } from "@mui/icons-material";
 
 export const Home = () => {
   const [open, setOpen] = useState(false);
@@ -34,7 +35,7 @@ export const Home = () => {
           borderRadius: "16px",
           backgroundColor: "white",
           marginTop: "20px",
-          height: { sm: "90vh", md: "80vh", xs: "95vh" },
+          minHeight: '100px'
         }}
       >
         <Box sx={{ flexDirection: "row-reverse" }} display="flex">
@@ -55,6 +56,8 @@ export const Home = () => {
           sx={{
             display: { sm: "grid", md: "flex", xs: "grid" },
             justifyContent: { md: "space-between" },
+            marginBottom: '10px',
+            paddingBottom: '30px'
           }}
         >
           <Button
