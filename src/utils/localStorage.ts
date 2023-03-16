@@ -1,6 +1,16 @@
 import { formattedDate } from "./dateFormat";
 
-export function saveLocalStorage(values: any, calc: number) {
+export function saveLocalStorage(
+  values: {
+    carga: number;
+    distancia: number;
+    consumo: number;
+    capacidade: number;
+    placa: string;
+    modelo: string;
+  },
+  calc: number
+) {
   const history = JSON.parse(localStorage.getItem("history") || "[]");
   const id = "id" + new Date().getTime();
   const date = formattedDate();

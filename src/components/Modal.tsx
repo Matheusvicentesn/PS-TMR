@@ -1,16 +1,22 @@
 import { Backdrop, Fade, Modal } from "@mui/material";
 import { Box } from "@mui/system";
 
-export const Modald = (props: any) => {
+export const Modald = (props: {
+  aberto: boolean;
+  fechado: any;
+  children: string | JSX.Element | JSX.Element[];
+  height: number;
+  bgcolor: boolean;
+}) => {
   const style = {
     position: "absolute" as "absolute",
-    top: "20%",
+    top: "30%",
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: "80%",
-    height: 300,
-    bgcolor: "background.paper",
-    boxShadow: 24,
+    height: props.height,
+    bgcolor: props.bgcolor === false ? "" : "background.paper",
+    boxShadow: 1,
     p: 4,
   };
 
@@ -27,16 +33,14 @@ export const Modald = (props: any) => {
           slots={{ backdrop: Backdrop }}
           slotProps={{
             backdrop: {
-              timeout: 500,
+              timeout: 1000,
             },
           }}
           sx={{
             mb: 2,
             display: "flex",
             flexDirection: "column",
-
             overflowY: "scroll",
-            // justifyContent="flex-end" # DO NOT USE THIS WITH 'scroll'
           }}
         >
           <Fade in={props.aberto}>

@@ -11,14 +11,25 @@ export const FormCalc = () => {
     initialValues: {
       placa: "",
       modelo: "",
+      // @ts-ignore
       capacidade: "",
+      // @ts-ignore
       carga: "",
+      // @ts-ignore
       consumo: "",
+      // @ts-ignore
       distancia: "",
     },
     validationSchema: validations,
 
-    onSubmit: (values) => {
+    onSubmit: (values: {
+      carga: number;
+      distancia: number;
+      consumo: number;
+      capacidade: number;
+      placa: string;
+      modelo: string;
+    }) => {
       const total = calc(values);
       setResul(total);
       saveLocalStorage(values, total);
@@ -34,6 +45,11 @@ export const FormCalc = () => {
           label="Placa"
           fullWidth
           margin="dense"
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">Placa do veículo</InputAdornment>
+            ),
+          }}
           onChange={formik.handleChange}
           error={formik.touched.placa && Boolean(formik.errors.placa)}
           helperText={formik.touched.placa && formik.errors.placa}
@@ -45,6 +61,11 @@ export const FormCalc = () => {
           label="Modelo"
           fullWidth
           margin="dense"
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">Modelo do veículo</InputAdornment>
+            ),
+          }}
           onChange={formik.handleChange}
           error={formik.touched.modelo && Boolean(formik.errors.modelo)}
           helperText={formik.touched.modelo && formik.errors.modelo}
@@ -58,7 +79,7 @@ export const FormCalc = () => {
           fullWidth
           margin="dense"
           InputProps={{
-            startAdornment: (
+            endAdornment: (
               <InputAdornment position="end">Litros</InputAdornment>
             ),
           }}
@@ -75,7 +96,7 @@ export const FormCalc = () => {
           fullWidth
           margin="dense"
           InputProps={{
-            startAdornment: (
+            endAdornment: (
               <InputAdornment position="end">Toneladas</InputAdornment>
             ),
           }}
@@ -91,8 +112,8 @@ export const FormCalc = () => {
           fullWidth
           margin="dense"
           InputProps={{
-            startAdornment: (
-              <InputAdornment position="end">Litros</InputAdornment>
+            endAdornment: (
+              <InputAdornment position="end">Litros por 100km</InputAdornment>
             ),
           }}
           onChange={formik.handleChange}
@@ -108,7 +129,7 @@ export const FormCalc = () => {
           margin="dense"
           fullWidth
           InputProps={{
-            startAdornment: <InputAdornment position="end">Km</InputAdornment>,
+            endAdornment: <InputAdornment position="end">Km</InputAdornment>,
           }}
           onChange={formik.handleChange}
           error={formik.touched.distancia && Boolean(formik.errors.distancia)}

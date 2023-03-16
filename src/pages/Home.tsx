@@ -22,13 +22,9 @@ export const Home = () => {
   const handleCloseInfo = () => {
     setOpenInfo(false);
   };
-
   return (
     <>
-      <Container
-        maxWidth="sm"
-        sx={{ border: 1, borderColor: "#00A335", height: "80vh" }}
-      >
+      <Container maxWidth="sm" sx={{ height: "90vh", borderRadius: "16px" }}>
         <Box sx={{ flexDirection: "row-reverse" }} display="flex">
           <Button onClick={handleOpenInfo}>
             <InfoIcon color="secondary"></InfoIcon>
@@ -36,7 +32,7 @@ export const Home = () => {
         </Box>
 
         <Typography variant="h3" gutterBottom align="center">
-          Calcule
+          Cálculo de de Combustivel
         </Typography>
         <FormCalc></FormCalc>
         <Box
@@ -51,6 +47,7 @@ export const Home = () => {
             color="primary"
             variant="contained"
             type="submit"
+            size="medium"
           >
             Calcular
           </Button>
@@ -59,12 +56,14 @@ export const Home = () => {
             color="primary"
             variant="contained"
             type="reset"
+            size="medium"
           >
             Limpar Campos
           </Button>
           <Button
             color="primary"
             variant="contained"
+            size="medium"
             onClick={() => {
               handleOpen();
             }}
@@ -72,12 +71,23 @@ export const Home = () => {
             Histórico
           </Button>
         </Box>
-        <Modald aberto={open} fechado={handleClose}>
+        <Modald aberto={open} fechado={handleClose} height={0} bgcolor={false}>
           <HistoryTable></HistoryTable>
         </Modald>
-        <Modald aberto={openInfo} fechado={handleCloseInfo}>
+        <Modald
+          aberto={openInfo}
+          fechado={handleCloseInfo}
+          height={150}
+          bgcolor={true}
+        >
           <Typography variant="h3" gutterBottom align="center">
-            Seja bem vindo
+            Informações
+          </Typography>
+          <Typography variant="inherit" gutterBottom align="center">
+            Em caso de dúvidas estamos sempre próximos pelo e-mail de contato:{" "}
+            <a href="mailto:contato@matheusvicente.dev.br">
+              contato@matheusvicente.dev.br
+            </a>
           </Typography>
         </Modald>
       </Container>

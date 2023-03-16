@@ -1,26 +1,30 @@
-import { createTheme, ThemeProvider } from "@mui/material";
+import { createTheme, GlobalStyles, ThemeProvider } from "@mui/material";
 import { Home } from "./pages/Home";
 
 function App() {
-  const theme = createTheme({
+  const themeColors = createTheme({
     palette: {
       primary: {
-        light: "#757ce8",
-        main: "#3f50b5",
-        dark: "#002884",
-        contrastText: "#fff",
+        light: "#00A335",
+        main: "#00A335",
+        dark: "#00A335",
+        contrastText: "#FFFFFF",
       },
       secondary: {
-        light: "#ff7961",
-        main: "#f44336",
-        dark: "#ba000d",
-        contrastText: "#000",
+        light: "#00A335",
+        main: "#00A335",
+        dark: "#00A335",
+        contrastText: "#00A335",
       },
+    },
+    typography: {
+      fontFamily: ["Nunito Sans", "sans-serif"].join(","),
     },
   });
   return (
     <div className="App">
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={themeColors}>
+        <GlobalStyles styles={{ body: { backgroundColor: "#bedcbc" } }} />
         <Home></Home>
       </ThemeProvider>
     </div>
