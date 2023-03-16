@@ -71,7 +71,13 @@ export const Home = () => {
             Histórico
           </Button>
         </Box>
-        <Modald aberto={open} fechado={handleClose} height={0} bgcolor={false}>
+        <Modald
+          aberto={open}
+          fechado={handleClose}
+          height={0}
+          bgcolor={false}
+          top="5%"
+        >
           <HistoryTable></HistoryTable>
         </Modald>
         <Modald
@@ -79,6 +85,7 @@ export const Home = () => {
           fechado={handleCloseInfo}
           height={150}
           bgcolor={true}
+          top="20%"
         >
           <Typography variant="h3" gutterBottom align="center">
             Informações

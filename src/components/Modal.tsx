@@ -7,10 +7,11 @@ export const Modald = (props: {
   children: string | JSX.Element | JSX.Element[];
   height: number;
   bgcolor: boolean;
+  top: string
 }) => {
   const style = {
     position: "absolute" as "absolute",
-    top: "30%",
+    top: props.top,
     left: "50%",
     transform: "translate(-50%, -50%)",
     width: "80%",
