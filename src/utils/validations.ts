@@ -9,8 +9,20 @@ export const validations = yup.object({
       "A Placa deve ser informada seguindo padrão AAA0A00"
     ),
   model: yup.string().required("Campo obrigatório").min(3).max(15),
-  fuelCapacity: yup.number().required("Campo obrigatório"),
-  carLoad: yup.number().required("Campo obrigatório"),
-  consumption: yup.number().required("Campo obrigatório"),
-  distance: yup.number().required("Campo obrigatório"),
+  fuelCapacity: yup
+    .number()
+    .typeError("Campo Não pode ser nulo")
+    .required("Campo obrigatório"),
+  carLoad: yup
+    .number()
+    .typeError("Campo Não pode ser nulo")
+    .required("Campo obrigatório"),
+  consumption: yup
+    .number()
+    .typeError("Campo Não pode ser nulo")
+    .required("Campo obrigatório"),
+  distance: yup
+    .number()
+    .typeError("Campo Não pode ser nulo")
+    .required("Campo obrigatório"),
 });
