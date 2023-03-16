@@ -17,14 +17,14 @@ export function saveLocalStorage(
   const time = new Date().toLocaleTimeString();
   history.push({
     id,
-    placa: values.plate,
-    modelo: values.model,
-    capacidade: values.fuelCapacity,
-    carga: values.carLoad,
-    consumo: values.consumption,
-    distancia: values.distance,
-    data: date,
-    hora: time,
+    plate: values.plate,
+    model: values.model,
+    fuelCapacity: values.fuelCapacity,
+    carLoad: values.carLoad,
+    consumption: values.consumption,
+    distance: values.distance,
+    date,
+    time,
     total: calc,
   });
   localStorage.setItem("history", JSON.stringify(history));

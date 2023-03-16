@@ -32,14 +32,14 @@ export const HistoryTable = () => {
               key={row.id}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
             >
-              <TableCell align="right">{row.placa}</TableCell>
-              <TableCell align="right">{row.modelo}</TableCell>
-              <TableCell align="right">{row.capacidade}</TableCell>
-              <TableCell align="right">{row.carga}</TableCell>
-              <TableCell align="right">{row.consumo}</TableCell>
-              <TableCell align="right">{row.distancia}</TableCell>
-              <TableCell align="right">{row.data}</TableCell>
-              <TableCell align="right">{row.hora}</TableCell>
+              <TableCell align="right">{row.plate}</TableCell>
+              <TableCell align="right">{row.model}</TableCell>
+              <TableCell align="right">{row.fuelCapacity}</TableCell>
+              <TableCell align="right">{row.carLoad}</TableCell>
+              <TableCell align="right">{row.consumption}</TableCell>
+              <TableCell align="right">{row.distance}</TableCell>
+              <TableCell align="right">{row.date}</TableCell>
+              <TableCell align="right">{row.time}</TableCell>
               <TableCell align="right">{row.total}</TableCell>
             </TableRow>
           ))}
