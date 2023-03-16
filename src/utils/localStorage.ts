@@ -1,4 +1,4 @@
-import { formattedDate } from "./dateFormat";
+import { getCurrentDate } from "./dateFormat";
 
 export function saveLocalStorage(
   values: {
@@ -13,7 +13,7 @@ export function saveLocalStorage(
 ) {
   const history = JSON.parse(localStorage.getItem("history") || "[]");
   const id = "id" + new Date().getTime();
-  const date = formattedDate();
+  const date = getCurrentDate();
   const time = new Date().toLocaleTimeString();
   history.push({
     id,
