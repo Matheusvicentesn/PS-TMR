@@ -10,6 +10,8 @@
 
 </p>
 
+Hospedado em: <a href="https://tmrcalcps.netlify.app/" title="">https://tmrcalcps.netlify.app/</a>
+
 ## Rodando o projeto
 
 ### Clonando repositório
