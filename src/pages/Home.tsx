@@ -72,8 +72,8 @@ export const Home = () => {
           </Button>
         </Box>
         <Modald
-          aberto={open}
-          fechado={handleClose}
+          open={open}
+          close={handleClose}
           height={0}
           bgcolor={false}
           top="5%"
@@ -81,8 +81,8 @@ export const Home = () => {
           <HistoryTable></HistoryTable>
         </Modald>
         <Modald
-          aberto={openInfo}
-          fechado={handleCloseInfo}
+          open={openInfo}
+          close={handleCloseInfo}
           height={150}
           bgcolor={true}
           top="20%"

@@ -2,12 +2,12 @@ import { formattedDate } from "./dateFormat";
 
 export function saveLocalStorage(
   values: {
-    carga: number;
-    distancia: number;
-    consumo: number;
-    capacidade: number;
-    placa: string;
-    modelo: string;
+    carLoad: number;
+    distance: number;
+    consumption: number;
+    fuelCapacity: number;
+    plate: string;
+    model: string;
   },
   calc: number
 ) {
@@ -17,12 +17,12 @@ export function saveLocalStorage(
   const time = new Date().toLocaleTimeString();
   history.push({
     id,
-    placa: values.placa,
-    modelo: values.modelo,
-    capacidade: values.capacidade,
-    carga: values.carga,
-    consumo: values.consumo,
-    distancia: values.distancia,
+    placa: values.plate,
+    modelo: values.model,
+    capacidade: values.fuelCapacity,
+    carga: values.carLoad,
+    consumo: values.consumption,
+    distancia: values.distance,
     data: date,
     hora: time,
     total: calc,

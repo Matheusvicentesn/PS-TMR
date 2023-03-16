@@ -9,26 +9,26 @@ export const FormCalc = () => {
   const [resul, setResul] = useState(0);
   const formik = useFormik({
     initialValues: {
-      placa: "",
-      modelo: "",
+      plate: "",
+      model: "",
       // @ts-ignore
-      capacidade: "",
+      fuelCapacity: "",
       // @ts-ignore
-      carga: "",
+      carLoad: "",
       // @ts-ignore
-      consumo: "",
+      consumption: "",
       // @ts-ignore
-      distancia: "",
+      distance: "",
     },
     validationSchema: validations,
 
     onSubmit: (values: {
-      carga: number;
-      distancia: number;
-      consumo: number;
-      capacidade: number;
-      placa: string;
-      modelo: string;
+      carLoad: number;
+      distance: number;
+      consumption: number;
+      fuelCapacity: number;
+      plate: string;
+      model: string;
     }) => {
       const total = calc(values);
       setResul(total);
@@ -40,8 +40,8 @@ export const FormCalc = () => {
     <>
       <form id="calcForm" onSubmit={formik.handleSubmit}>
         <TextField
-          id="placa"
-          name="placa"
+          id="plate"
+          name="plate"
           label="Placa"
           fullWidth
           margin="dense"
@@ -51,13 +51,13 @@ export const FormCalc = () => {
             ),
           }}
           onChange={formik.handleChange}
-          error={formik.touched.placa && Boolean(formik.errors.placa)}
-          helperText={formik.touched.placa && formik.errors.placa}
+          error={formik.touched.plate && Boolean(formik.errors.plate)}
+          helperText={formik.touched.plate && formik.errors.plate}
         ></TextField>
 
         <TextField
-          id="modelo"
-          name="modelo"
+          id="model"
+          name="model"
           label="Modelo"
           fullWidth
           margin="dense"
@@ -67,14 +67,14 @@ export const FormCalc = () => {
             ),
           }}
           onChange={formik.handleChange}
-          error={formik.touched.modelo && Boolean(formik.errors.modelo)}
-          helperText={formik.touched.modelo && formik.errors.modelo}
+          error={formik.touched.model && Boolean(formik.errors.model)}
+          helperText={formik.touched.model && formik.errors.model}
         ></TextField>
 
         <TextField
           type="number"
-          id="capacidade"
-          name="capacidade"
+          id="fuelCapacity"
+          name="fuelCapacity"
           label="Capacidade do tanque"
           fullWidth
           margin="dense"
@@ -84,14 +84,16 @@ export const FormCalc = () => {
             ),
           }}
           onChange={formik.handleChange}
-          error={formik.touched.capacidade && Boolean(formik.errors.capacidade)}
-          helperText={formik.touched.capacidade && formik.errors.capacidade}
+          error={
+            formik.touched.fuelCapacity && Boolean(formik.errors.fuelCapacity)
+          }
+          helperText={formik.touched.fuelCapacity && formik.errors.fuelCapacity}
         ></TextField>
 
         <TextField
           type="number"
-          id="carga"
-          name="carga"
+          id="carLoad"
+          name="carLoad"
           label="Carga máxima"
           fullWidth
           margin="dense"
@@ -101,13 +103,13 @@ export const FormCalc = () => {
             ),
           }}
           onChange={formik.handleChange}
-          error={formik.touched.carga && Boolean(formik.errors.carga)}
-          helperText={formik.touched.carga && formik.errors.carga}
+          error={formik.touched.carLoad && Boolean(formik.errors.carLoad)}
+          helperText={formik.touched.carLoad && formik.errors.carLoad}
         ></TextField>
         <TextField
           type="number"
-          id="consumo"
-          name="consumo"
+          id="consumption"
+          name="consumption"
           label="Consumo médio"
           fullWidth
           margin="dense"
@@ -117,14 +119,16 @@ export const FormCalc = () => {
             ),
           }}
           onChange={formik.handleChange}
-          error={formik.touched.consumo && Boolean(formik.errors.consumo)}
-          helperText={formik.touched.consumo && formik.errors.consumo}
+          error={
+            formik.touched.consumption && Boolean(formik.errors.consumption)
+          }
+          helperText={formik.touched.consumption && formik.errors.consumption}
         ></TextField>
 
         <TextField
           type="number"
-          id="distancia"
-          name="distancia"
+          id="distance"
+          name="distance"
           label="Distância percorrida na jornada"
           margin="dense"
           fullWidth
@@ -132,8 +136,8 @@ export const FormCalc = () => {
             endAdornment: <InputAdornment position="end">Km</InputAdornment>,
           }}
           onChange={formik.handleChange}
-          error={formik.touched.distancia && Boolean(formik.errors.distancia)}
-          helperText={formik.touched.distancia && formik.errors.distancia}
+          error={formik.touched.distance && Boolean(formik.errors.distance)}
+          helperText={formik.touched.distance && formik.errors.distance}
         ></TextField>
       </form>
       {resul === 0 ? (

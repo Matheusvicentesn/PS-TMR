@@ -1,14 +1,15 @@
 export function calc(values: {
-  carga: number;
-  distancia: number;
-  consumo: number;
+  carLoad: number;
+  distance: number;
+  consumption: number;
 }) {
-  let carga = values.carga;
-  let distancia = values.distancia;
-  let consumo = values.consumo;
+  const carLoad = values.carLoad;
+  const distance = values.distance;
+  const consumption = values.consumption;
+  const LitesPerkm = consumption / 100;
 
-  let kilo_por_km = carga / (distancia * 0.001);
-  let litros_tonelada_km = (consumo * 1000) / (kilo_por_km * 1000);
+  const kiloPerKm = carLoad / (distance * 0.001);
+  const litersTonKm = (LitesPerkm * 1000) / (kiloPerKm * 1000);
 
-  return litros_tonelada_km;
+  return litersTonKm;
 }

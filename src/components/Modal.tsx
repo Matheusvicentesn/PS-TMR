@@ -2,12 +2,12 @@ import { Backdrop, Fade, Modal } from "@mui/material";
 import { Box } from "@mui/system";
 
 export const Modald = (props: {
-  aberto: boolean;
-  fechado: any;
+  open: boolean;
+  close: any;
   children: string | JSX.Element | JSX.Element[];
   height: number;
   bgcolor: boolean;
-  top: string
+  top: string;
 }) => {
   const style = {
     position: "absolute" as "absolute",
@@ -21,34 +21,32 @@ export const Modald = (props: {
     p: 4,
   };
 
-  if (props.aberto === false) return null;
+  if (props.open === false) return null;
   else {
     return (
-      <div>
-        <Modal
-          aria-labelledby="transition-modal-title"
-          aria-describedby="transition-modal-description"
-          open={props.aberto}
-          onClose={props.fechado}
-          closeAfterTransition
-          slots={{ backdrop: Backdrop }}
-          slotProps={{
-            backdrop: {
-              timeout: 1000,
-            },
-          }}
-          sx={{
-            mb: 2,
-            display: "flex",
-            flexDirection: "column",
-            overflowY: "scroll",
-          }}
-        >
-          <Fade in={props.aberto}>
-            <Box sx={style}>{props.children}</Box>
-          </Fade>
-        </Modal>
-      </div>
+      <Modal
+        aria-labelledby="transition-modal-title"
+        aria-describedby="transition-modal-description"
+        open={props.open}
+        onClose={props.close}
+        closeAfterTransition
+        slots={{ backdrop: Backdrop }}
+        slotProps={{
+          backdrop: {
+            timeout: 1000,
+          },
+        }}
+        sx={{
+          mb: 2,
+          display: "flex",
+          flexDirection: "column",
+          overflowY: "scroll",
+        }}
+      >
+        <Fade in={props.open}>
+          <Box sx={style}>{props.children}</Box>
+        </Fade>
+      </Modal>
     );
   }
 };

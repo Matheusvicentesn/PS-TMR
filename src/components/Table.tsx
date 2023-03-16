@@ -6,7 +6,6 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Typography,
 } from "@mui/material";
 
 export const HistoryTable = () => {
