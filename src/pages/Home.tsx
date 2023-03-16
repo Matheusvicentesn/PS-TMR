@@ -5,7 +5,6 @@ import { FormCalc } from "../components/Form";
 import { Modald } from "../components/Modal";
 import { HistoryTable } from "../components/Table";
 import InfoIcon from "@mui/icons-material/Info";
-import { useTheme } from "@emotion/react";
 
 export const Home = () => {
   const [open, setOpen] = useState(false);
@@ -42,7 +41,7 @@ export const Home = () => {
         </Box>
 
         <Typography variant="h3" gutterBottom align="center" marginTop={"5px"}>
-          Cálculo de Combustivel
+          Cálculo de Combustível
         </Typography>
         <FormCalc></FormCalc>
         <Box

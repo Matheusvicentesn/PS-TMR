@@ -144,7 +144,7 @@ export const FormCalc = () => {
         ""
       ) : (
         <Typography variant="h4" gutterBottom align="center">
-          O consumo total de combustível é: {resul}
+          O consumo total de combustível é: {resul.toFixed(4)}L
         </Typography>
       )}
     </>

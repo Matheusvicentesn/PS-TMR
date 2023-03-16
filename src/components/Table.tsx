@@ -40,27 +40,40 @@ export const HistoryTable = () => {
               <b>Hora do registro</b>
             </TableCell>
             <TableCell align="center">
-              <b>Consumo de combustivel Total</b>
+              <b>Consumo de combustível Total</b>
             </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {history?.map((row: any) => (
-            <TableRow
-              key={row.id}
-              sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-            >
-              <TableCell align="right">{row.plate}</TableCell>
-              <TableCell align="right">{row.model}</TableCell>
-              <TableCell align="right">{row.fuelCapacity}</TableCell>
-              <TableCell align="right">{row.carLoad}</TableCell>
-              <TableCell align="right">{row.consumption}</TableCell>
-              <TableCell align="right">{row.distance}</TableCell>
-              <TableCell align="right">{row.date}</TableCell>
-              <TableCell align="right">{row.time}</TableCell>
-              <TableCell align="right">{row.total}</TableCell>
-            </TableRow>
-          ))}
+          {history?.map(
+            (data: {
+              id: string;
+              plate: string;
+              model: string;
+              fuelCapacity: number;
+              carLoad: number;
+              consumption: number;
+              distance: number;
+              date: string;
+              time: string;
+              total: number;
+            }) => (
+              <TableRow
+                key={data.id}
+                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+              >
+                <TableCell align="center">{data.plate}</TableCell>
+                <TableCell align="center">{data.model}</TableCell>
+                <TableCell align="center">{data.fuelCapacity}</TableCell>
+                <TableCell align="center">{data.carLoad}</TableCell>
+                <TableCell align="center">{data.consumption}</TableCell>
+                <TableCell align="center">{data.distance}</TableCell>
+                <TableCell align="center">{data.date}</TableCell>
+                <TableCell align="center">{data.time}</TableCell>
+                <TableCell align="center">{data.total.toFixed(4)}L</TableCell>
+              </TableRow>
+            )
+          )}
         </TableBody>
       </Table>
     </TableContainer>
