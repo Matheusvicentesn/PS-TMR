@@ -7,7 +7,7 @@ function App() {
       primary: {
         light: "#00A335",
         main: "#00A335",
-        dark: "#00A335",
+        dark: "#bedcbc",
         contrastText: "#FFFFFF",
       },
       secondary: {

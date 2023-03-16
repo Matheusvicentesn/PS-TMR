@@ -5,6 +5,7 @@ import { FormCalc } from "../components/Form";
 import { Modald } from "../components/Modal";
 import { HistoryTable } from "../components/Table";
 import InfoIcon from "@mui/icons-material/Info";
+import { useTheme } from "@emotion/react";
 
 export const Home = () => {
   const [open, setOpen] = useState(false);
@@ -22,25 +23,37 @@ export const Home = () => {
   const handleCloseInfo = () => {
     setOpenInfo(false);
   };
+
   return (
     <>
-      <Container maxWidth="sm" sx={{ height: "90vh", borderRadius: "16px" }}>
+      <Container
+        maxWidth="sm"
+        sx={{
+          
+          borderRadius: "16px",
+          backgroundColor: "white",
+          marginTop: "20px", height: { sm: "90vh", md: "80vh", xs: "95vh" }
+        }}
+      >
         <Box sx={{ flexDirection: "row-reverse" }} display="flex">
           <Button onClick={handleOpenInfo}>
             <InfoIcon color="secondary"></InfoIcon>
           </Button>
         </Box>
 
-        <Typography variant="h3" gutterBottom align="center">
-          Cálculo de de Combustivel
+        <Typography variant="h3" gutterBottom align="center" marginTop={"5px"}>
+          Cálculo de Combustivel
         </Typography>
         <FormCalc></FormCalc>
         <Box
           component="span"
           m={5}
-          display="flex"
-          justifyContent="space-between"
+          justifyContent=""
           alignItems="center"
+          sx={{
+            display: { sm: "grid", md: "flex", xs: "grid" },
+            justifyContent: { md: "space-between" },
+          }}
         >
           <Button
             form="calcForm"
@@ -58,7 +71,7 @@ export const Home = () => {
             type="reset"
             size="medium"
           >
-            Limpar Campos
+            Limpar campos
           </Button>
           <Button
             color="primary"

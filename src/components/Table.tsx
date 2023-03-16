@@ -15,15 +15,33 @@ export const HistoryTable = () => {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell align="right">Placa do veículo</TableCell>
-            <TableCell align="right">Modelo do veículo</TableCell>
-            <TableCell align="right">Capacidade do tanque(Litros)</TableCell>
-            <TableCell align="right">Carga Máxima(Toneladas)</TableCell>
-            <TableCell align="right">Consumo Médio(Por Km)</TableCell>
-            <TableCell align="right">Distancia Percorrida(Km)</TableCell>
-            <TableCell align="right">Data do registro</TableCell>
-            <TableCell align="right">Hora do registro</TableCell>
-            <TableCell align="right">Consumo de combustivel Total</TableCell>
+            <TableCell align="center">
+              <b>Placa do veículo</b>
+            </TableCell>
+            <TableCell align="center">
+              <b>Modelo do veículo</b>
+            </TableCell>
+            <TableCell align="center">
+              <b>Capacidade do tanque(Litros)</b>
+            </TableCell>
+            <TableCell align="center">
+              <b>Carga Máxima(Toneladas)</b>
+            </TableCell>
+            <TableCell align="center">
+              <b>Consumo Médio(Por Km)</b>
+            </TableCell>
+            <TableCell align="center">
+              <b>Distancia Percorrida(Km)</b>
+            </TableCell>
+            <TableCell align="center">
+              <b>Data do registro</b>
+            </TableCell>
+            <TableCell align="center">
+              <b>Hora do registro</b>
+            </TableCell>
+            <TableCell align="center">
+              <b>Consumo de combustivel Total</b>
+            </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

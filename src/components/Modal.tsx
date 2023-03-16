@@ -19,6 +19,8 @@ export const Modald = (props: {
     bgcolor: props.bgcolor === false ? "" : "background.paper",
     boxShadow: 1,
     p: 4,
+    borderRadius: '16px'
+    
   };
 
   if (props.open === false) return null;
