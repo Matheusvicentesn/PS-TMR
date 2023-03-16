@@ -60,7 +60,12 @@ export const HistoryTable = () => {
             }) => (
               <TableRow
                 key={data.id}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
+                sx={{
+                  "&:last-child td, &:last-child th": { border: 0 },
+                  ":hover": {
+                    backgroundColor: "#abd5a2 !important",
+                  },
+                }}
               >
                 <TableCell align="center">{data.plate}</TableCell>
                 <TableCell align="center">{data.model}</TableCell>
