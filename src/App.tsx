@@ -12,7 +12,7 @@ function App() {
       },
       secondary: {
         light: "#00A335",
-        main: "#00A335",
+        main: "#002630",
         dark: "#00A335",
         contrastText: "#00A335",
       },

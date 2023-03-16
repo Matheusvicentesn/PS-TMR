@@ -5,6 +5,9 @@ import { FormCalc } from "../components/Form";
 import { Modald } from "../components/Modal";
 import { HistoryTable } from "../components/Table";
 import InfoIcon from "@mui/icons-material/Info";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import AssignmentIndIcon from "@mui/icons-material/AssignmentInd";
 
 export const Home = () => {
   const [open, setOpen] = useState(false);
@@ -28,15 +31,15 @@ export const Home = () => {
       <Container
         maxWidth="sm"
         sx={{
-          
           borderRadius: "16px",
           backgroundColor: "white",
-          marginTop: "20px", height: { sm: "90vh", md: "80vh", xs: "95vh" }
+          marginTop: "20px",
+          height: { sm: "90vh", md: "80vh", xs: "95vh" },
         }}
       >
         <Box sx={{ flexDirection: "row-reverse" }} display="flex">
           <Button onClick={handleOpenInfo}>
-            <InfoIcon color="secondary"></InfoIcon>
+            <InfoIcon color="primary"></InfoIcon>
           </Button>
         </Box>
 
@@ -108,6 +111,23 @@ export const Home = () => {
               contato@matheusvicente.dev.br
             </a>
           </Typography>
+          <Box display="flex" justifyContent="center" alignItems="center">
+            <Button href="https://github.com/Matheusvicentesn" target="_blank">
+              <GitHubIcon color="secondary"></GitHubIcon>
+            </Button>
+            <Button
+              href="https://www.linkedin.com/in/matheusvicentesn"
+              target="_blank"
+            >
+              <LinkedInIcon color="secondary"></LinkedInIcon>
+            </Button>
+            <Button
+              href="https://www.portfolio.matheusvicente.dev.br"
+              target="_blank"
+            >
+              <AssignmentIndIcon color="secondary"></AssignmentIndIcon>
+            </Button>
+          </Box>
         </Modald>
       </Container>
     </>
