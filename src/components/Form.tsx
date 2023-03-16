@@ -11,14 +11,10 @@ export const FormCalc = () => {
     initialValues: {
       plate: "",
       model: "",
-      // @ts-ignore
-      fuelCapacity: "",
-      // @ts-ignore
-      carLoad: "",
-      // @ts-ignore
-      consumption: "",
-      // @ts-ignore
-      distance: "",
+      fuelCapacity: parseInt(""),
+      carLoad: parseInt(""),
+      consumption: parseInt(""),
+      distance: parseInt(""),
     },
     validationSchema: validations,
 
