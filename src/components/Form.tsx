@@ -88,7 +88,6 @@ export const FormCalc = () => {
             formik.touched.fuelCapacity && Boolean(formik.errors.fuelCapacity)
           }
           helperText={formik.touched.fuelCapacity && formik.errors.fuelCapacity}
-          
         ></TextField>
 
         <TextField
@@ -145,7 +144,7 @@ export const FormCalc = () => {
         ""
       ) : (
         <Typography variant="h4" gutterBottom align="center">
-          Consumo será de <b>{resul.toFixed(4)} </b>Litros por Tonelada por Km 
+          Consumo será de <b>{resul.toFixed(4)} </b>Litros por Tonelada por Km
         </Typography>
       )}
     </>
