@@ -11,18 +11,18 @@ export const validations = yup.object({
   model: yup.string().required("Campo obrigatório").min(3).max(15),
   fuelCapacity: yup
     .number()
-    .typeError("Campo Não pode ser nulo")
+    .typeError("Campo precisa conter um número")
     .required("Campo obrigatório"),
   carLoad: yup
     .number()
-    .typeError("Campo Não pode ser nulo")
+    .typeError("Campo precisa conter um número")
     .required("Campo obrigatório"),
   consumption: yup
     .number()
-    .typeError("Campo Não pode ser nulo")
+    .typeError("Campo precisa conter um número")
     .required("Campo obrigatório"),
   distance: yup
     .number()
-    .typeError("Campo Não pode ser nulo")
+    .typeError("Campo precisa conter um número")
     .required("Campo obrigatório"),
 });
