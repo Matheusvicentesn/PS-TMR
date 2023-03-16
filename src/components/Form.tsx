@@ -88,6 +88,7 @@ export const FormCalc = () => {
             formik.touched.fuelCapacity && Boolean(formik.errors.fuelCapacity)
           }
           helperText={formik.touched.fuelCapacity && formik.errors.fuelCapacity}
+          
         ></TextField>
 
         <TextField
